@@ -1,0 +1,45 @@
+@import '../../../../../variables';
+
+.menuItemsList {
+  padding: 0 20px;
+}
+
+.itemWrapper:not(:last-child) {
+  border-bottom: 1px solid $greyEC;
+}
+
+.menuItem {
+  padding: 12px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  cursor: pointer;
+
+  &.smHidden {
+    display: none;
+  }
+
+  span {
+    color: $grey99;
+  }
+
+  &>svg+span {
+    margin-left: 7px;
+  }
+}
+
+@media all and (min-width: $tabletWidth) {
+  .menuItem {
+    padding: 6px 0;
+
+    &.smHidden {
+      display: flex;
+    }
+  }
+}
+
+@media all and (min-width: $desktopWidth) {
+  .menuItemsList {
+    padding: 10px 20px;
+  }
+}

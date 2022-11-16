@@ -1,0 +1,113 @@
+@import '../../../../variables';
+
+.open-enter {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.open-enter-active {
+  opacity: 1;
+  transform: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.open-exit {
+  opacity: 1;
+  transform: none;
+}
+
+.open-exit-active {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.menu {
+  position: relative;
+  order: 2;
+  display: flex;
+  align-items: center;
+  flex: 0 0;
+  margin: 0 0 0 auto;
+}
+
+.dropdown {
+  position: absolute;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  background-color: $white;
+}
+
+.closeBtn {
+  background-color: $greyD9;
+  padding: 12px 23px;
+  border-radius: 0 0 3px 3px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  color: $grey66;
+}
+
+.menuBtn {
+  position: relative;
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+}
+
+.menuBtn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  transform: scale(0);
+  transition: background-color .2s ease, transform .2s ease;
+}
+
+.menuBtnIsActive::before {
+  transform: scale(1);
+  background-color: rgba(51, 51, 51, 0.1);
+}
+
+.menuItemsList {
+  padding: 0 20px;
+}
+
+.menuItem {
+  padding: 10px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.menuItem span {
+  color: $grey99;
+}
+
+.menuItem>svg+span {
+  margin-left: 7px;
+}
+
+@media all and (min-width: $desktopWidth) {
+  .menuBtn:hover::before {
+    transform: scale(1);
+    background-color: rgba(51, 51, 51, 0.1);
+  }
+
+  .closeBtn {
+    display: none;
+  }
+
+  .menuItemsList {
+    padding: 10px 20px;
+  }
+
+  .menuItem {
+    padding: 6px 0;
+  }
+}

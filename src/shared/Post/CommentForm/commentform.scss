@@ -1,0 +1,133 @@
+@import '../../../variables';
+
+.show-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.show-enter-active,
+.show-exit {
+  opacity: 1;
+  transform: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.show-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
+
+  * {
+    font-family: Roboto;
+    font-weight: normal;
+  }
+}
+
+label {
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.input {
+  height: 89px;
+  border: 1px solid $greyD9;
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 3px 3px 0px 0px;
+  font-size: 16px;
+  line-height: 19px;
+  color: $grey66;
+  resize: vertical;
+
+  &:focus {
+    border: 2px solid $grey66;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $grey99;
+  }
+
+  &[aria-invalid],
+  &[aria-invalid]:focus {
+    border: 2px solid $red;
+  }
+}
+
+.controlsWrapper {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.symbolsCounter,
+.errorMessage {
+  position: absolute;
+  bottom: -15px;
+  color: $grey99;
+  font-size: 16px;
+}
+
+.errorMessage {
+  color: $red;
+}
+
+.markdownBtnsWrapper {
+  display: flex;
+  flex-grow: 1;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: $greyE5;
+
+  .markdownBtn:nth-child(n+5):nth-child(-n+12) {
+    display: none;
+  }
+
+  .markdownBtn:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.button {
+  width: 160px;
+  height: 50px;
+  background: $orange;
+  border-radius: 0px 0px 3px 0px;
+  text-align: center;
+  color: $white;
+}
+
+
+@media all and (min-width: $tabletWidth) {
+  .button {
+    width: 220px;
+  }
+
+  .markdownBtn:not(:last-child) {
+    margin-right: 26px;
+  }
+}
+
+@media all and (min-width: $desktopWidth) {
+  .markdownBtnsWrapper {
+    justify-content: flex-start;
+    padding: 0 26px;
+
+    .markdownBtn:nth-child(n+5):nth-child(-n+12) {
+      display: inline-block;
+    }
+
+    &>div:nth-child(2) {
+      display: none;
+    }
+  }
+}

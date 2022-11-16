@@ -1,0 +1,70 @@
+@import '../../../../variables';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
+
+  * {
+    font-family: Roboto;
+    font-weight: normal;
+  }
+}
+
+.input {
+  height: 89px;
+  border: 1px solid $greyD9;
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 3px 3px 0px 0px;
+  font-size: 16px;
+  line-height: 19px;
+  color: $grey99;
+  resize: none;
+
+  &:focus {
+    border: 2px solid $grey66;
+    outline: none;
+  }
+}
+
+.controlsWrapper {
+  display: flex;
+
+  .markdownBtnsWrapper {
+    display: flex;
+    flex-grow: 1;
+    padding: 0 25px;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: $greyE5;
+
+    &>button:not(:last-child) {
+      margin-right: 25px;
+    }
+  }
+
+  .button {
+    width: 220px;
+    height: 50px;
+    background: $orange;
+    border-radius: 0px 0px 3px 0px;
+    text-align: center;
+    color: $white;
+  }
+}
+
+.controlsWrapperNarrow {
+
+  .markdownBtnsWrapper {
+    padding: 0 10px;
+
+    &>button:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  .button {
+    width: 100px;
+  }
+}

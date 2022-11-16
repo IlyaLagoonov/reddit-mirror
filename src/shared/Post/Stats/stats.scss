@@ -1,0 +1,48 @@
+@import '../../../variables';
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 35px;
+}
+
+.menu {
+  margin-left: auto;
+}
+
+.controlsContainer {
+  .menuItem {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-right: 30px;
+    cursor: pointer;
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  li:nth-child(n+2):nth-child(-n+5) {
+    display: none;
+  }
+}
+
+@media all and (min-width: $desktopWidth) {
+
+  .container {
+    justify-content: space-between;
+  }
+
+  .controlsContainer {
+    display: flex;
+
+    li:nth-child(n+2):nth-child(-n+5) {
+      display: flex;
+    }
+  }
+
+  .menu {
+    display: none;
+  }
+}
