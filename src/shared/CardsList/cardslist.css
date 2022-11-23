@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.loadMoreBtn {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 20px 50px;
+  border-radius: 7px;
+  background-color: #CC6633;
+}
+
+.bottomOfList {
+  margin-bottom: 0 !important;
+}
+
+@media all and (min-width: 768px) {
+  .cardsList {
+    padding: 40px 0;
+  }
+  .cardsList > li {
+    margin-bottom: 40px;
+  }
+}
+@media all and (min-width: 1240px) {
+  .cardsList > li {
+    margin-bottom: 0;
+  }
+}/*# sourceMappingURL=cardslist.css.map */

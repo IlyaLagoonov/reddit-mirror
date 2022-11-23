@@ -12,7 +12,11 @@ import { SuccessMsg } from './SuccessMsg';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { CommentFormDropdown } from './CommentFormDropdown';
-import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom'
+import { atom, useAtom } from 'jotai'
+
+const textAtom = atom('Привет из Jotai');
+
 
 const markdownBtns = [
   <Icon Name={EIcons.inlineCode} width={20} />,
@@ -55,6 +59,8 @@ export function CommentForm(props: ICommentFormProps) {
     : `Оставьте ваш комментарий`
 
   const [inputValue, setInputValue] = useState<string>(storeValue ? storeValue.text : '');
+  const [text, setText] = useAtom(textAtom);
+
   const [successMessage, showSuccessMessage] = useState<boolean>(false);
 
   const validationSchema = Yup.object().shape({
@@ -83,7 +89,7 @@ export function CommentForm(props: ICommentFormProps) {
   }, [isSubmitSuccessful, reset])
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setInputValue(e.target.value);
+    setText(e.target.value);
   }
 
   return (
@@ -94,7 +100,7 @@ export function CommentForm(props: ICommentFormProps) {
         name="comment"
         render={({ field: { onChange } }) => (
           <textarea className={styles.input}
-            value={inputValue} onChange={(e) => {
+            value={text} onChange={(e) => {
               onChange(e);
               handleChange(e);
             }}

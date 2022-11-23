@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.commentsBtn {
+  display: flex;
+  align-items: normal;
+}
+
+.commentsBtn * {
+  color: hsl(0deg, 0%, 77%);
+}
+
+.commentsNumber {
+  padding: 0 0 0 6px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+@media all and (min-width: 768px) {
+  .commentsBtn {
+    display: none;
+  }
+}/*# sourceMappingURL=commentsbtn.css.map */

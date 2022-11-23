@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.textContent {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.textContent > * + * {
+  padding: 7px 0 0;
+}
+
+@media all and (min-width: 768px) {
+  .textContent {
+    flex-basis: 350px;
+    order: 1;
+    margin: 0 0 0 38px;
+    flex-flow: column-reverse nowrap;
+    justify-content: center;
+  }
+  .textContent > * {
+    flex: 0 0;
+  }
+}
+@media all and (min-width: 1024px) {
+  .textContent {
+    flex-basis: 540px;
+  }
+}
+@media all and (min-width: 1240px) {
+  .textContent {
+    flex-basis: 672px;
+  }
+}/*# sourceMappingURL=textcontent.css.map */

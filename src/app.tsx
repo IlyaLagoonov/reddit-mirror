@@ -11,6 +11,7 @@ import { reducer } from "./store/store";
 import { configureStore } from "@reduxjs/toolkit";
 import { useToken } from "./hooks/useToken";
 import { ErrorScreen } from "./shared/CardsList/ErrorScreen";
+import { RecoilRoot } from "recoil";
 
 const store = configureStore({ reducer: reducer })
 export type RootState = ReturnType<typeof store.getState>
@@ -21,32 +22,33 @@ function AppComponent() {
 
   return (
     <Layout>
-      <Header />
-      <Content>
+      <RecoilRoot>
+        <Header />
+        <Content>
 
-        <Switch>
-          <Route exact path='/'>
-            <Redirect to="/best/" />
-          </Route>
-          <Route path='/auth'>
-            <Redirect to="/best/" />
-          </Route>
-          <Route path='/best/'>
-            <CardsList />
-          </Route>
-          <Route exact path='/404'>
-            <div style={{ height: 'calc(100vh - 185px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <ErrorScreen message="404 — страница не найдена" />
-            </div>
-          </Route>
-          <Route path='*'>
-            <Redirect to='/404' />
-          </Route>
-        </Switch>
+          <Switch>
+            <Route exact path='/'>
+              <Redirect to="/best/" />
+            </Route>
+            <Route path='/auth'>
+              <Redirect to="/best/" />
+            </Route>
+            <Route path='/best/'>
+              <CardsList />
+            </Route>
+            <Route exact path='/404'>
+              <div style={{ height: 'calc(100vh - 185px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <ErrorScreen message="404 — страница не найдена" />
+              </div>
+            </Route>
+            <Route path='*'>
+              <Redirect to='/404' />
+            </Route>
+          </Switch>
 
-      </Content>
+        </Content>
+      </RecoilRoot>
     </Layout>
   )
 }
-
 export const App = hot(() => <Provider store={store}><AppComponent /></Provider>);

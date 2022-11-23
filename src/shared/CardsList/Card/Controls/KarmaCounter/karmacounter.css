@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.karmaValue {
+  padding: 0 4px;
+  color: hsl(0deg, 0%, 77%);
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.down {
+  transform: rotate(180deg);
+}
+
+@media all and (min-width: 768px) {
+  .karmaCounter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+  }
+  .karmaValue {
+    padding: 7px 0;
+    font-size: 14px;
+    line-height: 16px;
+    color: #333333;
+  }
+}
+@media all and (min-width: 1240px) {
+  .karmaCounter > button.up > svg > path,
+.karmaCounter > button.down > svg > path {
+    transition: fill 0.2s ease;
+  }
+  .karmaCounter > button.up:hover > svg > path {
+    fill: #A4CC33;
+  }
+  .karmaCounter > button.down:hover > svg > path {
+    fill: #CC3361;
+  }
+}/*# sourceMappingURL=karmacounter.css.map */

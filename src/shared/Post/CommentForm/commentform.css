@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.show-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.show-enter-active,
+.show-exit {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.show-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
+}
+.form * {
+  font-family: Roboto;
+  font-weight: normal;
+}
+
+label {
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.input {
+  height: 89px;
+  border: 1px solid hsl(0deg, 0%, 85%);
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 3px 3px 0px 0px;
+  font-size: 16px;
+  line-height: 19px;
+  color: hsl(0deg, 0%, 40%);
+  resize: vertical;
+}
+.input:focus {
+  border: 2px solid hsl(0deg, 0%, 40%);
+  outline: none;
+}
+.input::-moz-placeholder {
+  color: hsl(0deg, 0%, 60%);
+}
+.input:-ms-input-placeholder {
+  color: hsl(0deg, 0%, 60%);
+}
+.input::placeholder {
+  color: hsl(0deg, 0%, 60%);
+}
+.input[aria-invalid], .input[aria-invalid]:focus {
+  border: 2px solid #CC3361;
+}
+
+.controlsWrapper {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.symbolsCounter,
+.errorMessage {
+  position: absolute;
+  bottom: -15px;
+  color: hsl(0deg, 0%, 60%);
+  font-size: 16px;
+}
+
+.errorMessage {
+  color: #CC3361;
+}
+
+.markdownBtnsWrapper {
+  display: flex;
+  flex-grow: 1;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: hsl(0deg, 0%, 90%);
+}
+.markdownBtnsWrapper .markdownBtn:nth-child(n+5):nth-child(-n+12) {
+  display: none;
+}
+.markdownBtnsWrapper .markdownBtn:not(:last-child) {
+  margin-right: 20px;
+}
+
+.button {
+  width: 160px;
+  height: 50px;
+  background: #CC6633;
+  border-radius: 0px 0px 3px 0px;
+  text-align: center;
+  color: hsl(0deg, 0%, 100%);
+}
+
+@media all and (min-width: 768px) {
+  .button {
+    width: 220px;
+  }
+  .markdownBtn:not(:last-child) {
+    margin-right: 26px;
+  }
+}
+@media all and (min-width: 1240px) {
+  .markdownBtnsWrapper {
+    justify-content: flex-start;
+    padding: 0 26px;
+  }
+  .markdownBtnsWrapper .markdownBtn:nth-child(n+5):nth-child(-n+12) {
+    display: inline-block;
+  }
+  .markdownBtnsWrapper > div:nth-child(2) {
+    display: none;
+  }
+}/*# sourceMappingURL=commentform.css.map */

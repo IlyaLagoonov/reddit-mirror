@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.actions {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.actions > * + * {
+  margin: 0 0 0 13px;
+}
+
+@media all and (min-width: 768px) {
+  .actions {
+    display: none;
+  }
+}/*# sourceMappingURL=actionbtns.css.map */

@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.card {
+  position: relative;
+  padding: 20px 20px 10px;
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: -1px;
+  margin-bottom: 20px;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 7px;
+  outline: 1px solid transparent;
+  outline-offset: -2px;
+  transition: outline 0.2s ease;
+}
+
+.card > *,
+.textContent > * {
+  flex: 1 1 100%;
+}
+
+.card > * + * {
+  padding: 13px 0 0;
+}
+
+.card h2 span {
+  transition: color 0.2s ease;
+}
+
+.card:focus-within h2 span {
+  color: #CC6633;
+}
+
+@media all and (min-width: 768px) {
+  .card {
+    background-color: transparent;
+    flex-flow: row nowrap;
+    max-height: 110px;
+    padding: 0 40px;
+    margin-bottom: 0;
+  }
+  .card > * {
+    flex: 0 0;
+  }
+  .card > * + * {
+    padding: 0;
+  }
+}
+@media all and (min-width: 1240px) {
+  .card {
+    padding: 20px 60px;
+    max-height: 150px;
+    cursor: pointer;
+    border-radius: 0;
+  }
+  .card:hover, .card:focus-within {
+    outline: 1px solid hsl(0deg, 0%, 85%);
+  }
+  .card:hover h2 span {
+    color: #CC6633;
+  }
+}/*# sourceMappingURL=card.css.map */

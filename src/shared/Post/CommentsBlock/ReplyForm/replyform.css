@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
+}
+.form * {
+  font-family: Roboto;
+  font-weight: normal;
+}
+
+.input {
+  height: 89px;
+  border: 1px solid hsl(0deg, 0%, 85%);
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 3px 3px 0px 0px;
+  font-size: 16px;
+  line-height: 19px;
+  color: hsl(0deg, 0%, 60%);
+  resize: none;
+}
+.input:focus {
+  border: 2px solid hsl(0deg, 0%, 40%);
+  outline: none;
+}
+
+.controlsWrapper {
+  display: flex;
+}
+.controlsWrapper .markdownBtnsWrapper {
+  display: flex;
+  flex-grow: 1;
+  padding: 0 25px;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: hsl(0deg, 0%, 90%);
+}
+.controlsWrapper .markdownBtnsWrapper > button:not(:last-child) {
+  margin-right: 25px;
+}
+.controlsWrapper .button {
+  width: 220px;
+  height: 50px;
+  background: #CC6633;
+  border-radius: 0px 0px 3px 0px;
+  text-align: center;
+  color: hsl(0deg, 0%, 100%);
+}
+
+.controlsWrapperNarrow .markdownBtnsWrapper {
+  padding: 0 10px;
+}
+.controlsWrapperNarrow .markdownBtnsWrapper > button:not(:last-child) {
+  margin-right: 15px;
+}
+.controlsWrapperNarrow .button {
+  width: 100px;
+}/*# sourceMappingURL=replyform.css.map */
